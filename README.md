@@ -1,6 +1,6 @@
 # Flight-Delay-Prediction
 
-<img src="<img width="612" height="281" alt="image" src="https://github.com/user-attachments/assets/ffecd633-ba57-4dfa-b7b9-db60aa4061de" />
+<img src="https://github.com/user-attachments/assets/ffecd633-ba57-4dfa-b7b9-db60aa4061de" />
 " width="1000" height="200">
 
 ## Introduction
