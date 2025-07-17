@@ -65,5 +65,5 @@ Run the script<br>
 <code>>> python app.py</code>
 
 <br>Contributors <br>
-*  S Siva Sankara Chari <br>
-*  Proj Gide Prof. Mohammed Alisha
+*  Name: S Siva Sankara Chari, 2214503405 <br>
+*  Proj Gide: Prof. Mohammed Alisha
