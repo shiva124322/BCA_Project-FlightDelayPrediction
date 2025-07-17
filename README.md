@@ -62,7 +62,7 @@ Setup the virtual environment and turn it on <br>
 <code>>> .\Flight-Delay-Prediction\Scripts\activate</code> (For Windows) <br>
 
 Run the script<br>
-<code>>> python app.py</code><brt>
+<code>>> python app.py</code><br>
 **Development of website**
 <code>>> http://127.0.0.1:5000/</code>
 
