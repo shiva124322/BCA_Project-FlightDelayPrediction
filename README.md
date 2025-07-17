@@ -63,8 +63,6 @@ Setup the virtual environment and turn it on <br>
 
 Run the script<br>
 <code>>> python app.py</code><br>
-**Development of website**
-<code>>> http://127.0.0.1:5000/</code>
 
 <br>Contributors <br>
 *  Name: S Siva Sankara Chari, 2214503405 <br>
