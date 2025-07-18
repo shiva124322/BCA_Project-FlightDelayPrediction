@@ -1,0 +1,14 @@
+# Ignore Python virtual environment and temporary files
+lib/
+venv/
+__pycache__/
+*.pyc
+*.pkl
+*.joblib
+*.h5
+*.npy
+*.log
+.DS_Store
+.vscode/
+.idea/
+.env
