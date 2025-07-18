@@ -1,91 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flight Delay Prediction</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <title>Flight Delay Prediction</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://t3.ftcdn.net/jpg/13/19/69/68/240_F_1319696878_hMDydvZeq1EYLnOkG1GwvIYdj9d4FFSo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+        }
 
-    header {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 2rem;
-      text-align: center;
-    }
+        .overlay {
+    	background-color: rgba(0, 0, 0, 0.4);  /* softer overlay */
+    	min-height: 100vh;
+    	padding: 40px 20px;
+	}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+	.container {
+            max-width: 700px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
-    }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
 
-    section {
-      margin-bottom: 2rem;
-    }
+        .prediction-message {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: green;
+        }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
+        .prediction-message.delayed {
+            color: red;
+        }
 
-    a {
-      color: #00bfff;
-      text-decoration: none;
-    }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #333;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <h1>Flight Delay Prediction</h1>
-    <p>Using Aviation Data and Machine Learning</p>
-  </header>
-  <main>
-    <section>
-      <h2>About the Project</h2>
-      <p>This project leverages aviation data and machine learning to predict potential flight delays. The predictive model considers multiple variables like time of year, airlines, and route information to determine the likelihood of a delay.</p>
-    </section>
+    <div class="overlay">
+        <div class="container">
+            <h1>Flight Delay Prediction</h1>
 
-    <section>
-      <h2>Live Model Interface</h2>
-      <p>If deployed, the model would be accessible via a Flask app. For now, please refer to the <a href="https://github.com/shiva124322/BCA_Project-FlightDelayPrediction" target="_blank">GitHub Repository</a> for source code and model files.</p>
-    </section>
+            {% if prediction_text == 0 %}
+                <div class="prediction-message">The flight is <strong>not delayed</strong>.</div>
+            {% elif prediction_text == 1 %}
+                <div class="prediction-message delayed">The flight <strong>is delayed</strong>.</div>
+            {% endif %}
 
-    <section>
-      <h2>How to Use</h2>
-      <ul>
-        <li>Clone the repository</li>
-        <li>Install required dependencies</li>
-        <li>Run the Flask app locally</li>
-        <li>Enter flight details and view prediction</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Flight Delay Prediction. View on <a href="https://github.com/shiva124322/BCA_Project-FlightDelayPrediction" target="_blank">GitHub</a>.
-  </footer>
+            <form method="POST" action="/predict">
+                <label for="year">Year</label>
+                <input type="text" id="year" name="year" placeholder="Enter year">
+
+                <label for="month">Month</label>
+                <input type="text" id="month" name="month" placeholder="Enter month">
+
+                <label for="day">Date</label>
+                <input type="text" id="day" name="day" placeholder="Enter date">
+
+                <!-- Add more fields here as needed -->
+
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+    </div>
 </body>
-
 </html>
