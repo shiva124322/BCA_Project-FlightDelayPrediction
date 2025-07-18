@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ignore Python virtual environment and temporary files
 lib/
 venv/
@@ -12,3 +13,6 @@ __pycache__/
 .vscode/
 .idea/
 .env
+=======
+"model.pkl" 
+>>>>>>> 82c26118af11bc00c892f3b9babf4cc36e3eeb5c
